@@ -27,7 +27,7 @@ fY= np.sum(array_xy, axis=0)
 def Gaussiana(x, mu, sigma):#Donde mu es la media y sigma la desviación estándar
     return (1/np.sqrt(2*np.pi*sigma**2))*np.exp(-(x-mu)**2/(2*sigma**2))
 #Se encuentra la curva de mejor ajuste Gaussiana para X:
-xs = list(range(5,16)) #Se limitan las muestras de X a valores discretos entre 5 y 15, como se dio en el CSV
+xs = np.linspace(5,15, num=11) #Se limitan las muestras de X a valores discretos entre 5 y 15, como se dio en el CSV
 param_x, _ = curve_fit(Gaussiana, xs, fX)
 #Se crea espacio lineal entre 5 y 15 con 30 puntos para graficar la curva de mejor ajuste obtenida:
 x_fit = np.linspace(5,15,30)
@@ -36,7 +36,7 @@ plt.plot(range(5,16),fX, 'b--', label='Función encontrada "a mano"')
 plt.show()
 
 #Se encuentra la curva de mejor ajuste Gaussiana para Y:
-ys = list(range(5,26)) #Se limitan las muestras de Y a valores discretos entre 5 y 25, como se dio en el CSV
+ys = np.linspace(5,25, num=21) #Se limitan las muestras de Y a valores discretos entre 5 y 25, como se dio en el CSV
 param_y, _ = curve_fit(Gaussiana, ys, fY)
 #Se crea espacio lineal entre 5 y 25 con 40 puntos para graficar la curva de mejor ajuste obtenida:
 y_fit = np.linspace(5,25,40)
