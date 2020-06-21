@@ -12,7 +12,7 @@ import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.optimize import curve_fit
 
-print("Respuestas de la Tarea #2 del curso IE0405 - Modelos Probabilísticos de Señales y Sistemas.")
+print("Respuestas de la Tarea #3 del curso IE0405 - Modelos Probabilísticos de Señales y Sistemas.")
 print("Estudiante: Mauricio Céspedes Tenorio. Carné: B71986.")
 #Extracción de datos del archivo datos.cvs en un dataframe (se especifica que el encabezado es la fila cero y el índice la columna 0):
 array_csv = np.genfromtxt('xy.csv', delimiter=',')
@@ -21,9 +21,9 @@ array_xy = np.delete(np.delete(array_csv, 0, 0), 0, 1)
 
 """1. A partir de los datos, encontrar la mejor curva de ajuste (modelo probabilístico) para las funciones de densidad marginales de X y Y."""
 print("\n\nPunto 1. Se encontraron las curvas de mejor ajuste para ambas funciones marginales (de X y Y) y se graficaron.")
-#Se encuentra a PMF de X al sumar todos los Y para cada valor de X (se suman todos los valores para cada fila):
+#Se encuentra la función marginal de X al sumar todos los Y para cada valor de X (se suman todos los valores para cada fila):
 fX= np.sum(array_xy, axis=1)
-#Se encuentra a PMF de Y al sumar todos los X para cada valor de Y (se suman todos los valores para cada columna):
+#Se encuentra la función marginal de Y al sumar todos los X para cada valor de Y (se suman todos los valores para cada columna):
 fY= np.sum(array_xy, axis=0)
 
 #Se observó al plotear fX y fY, que ambas se comportaban como una función Gaussiana, por lo que se definió la función:
