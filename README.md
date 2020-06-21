@@ -31,7 +31,7 @@ R\ Para este punto, primero se guardó en un array los datos datos en el archivo
 
 4. Graficar las funciones de densidad marginales (2D), la función de densidad conjunta (3D).  
 
-Como último punto, se graficaron las funciones de densidad marginales en 2D y la de densidad conjunta en 3D con ayuda de Matplotlib. Para el caso de la 3D, se graficó tanto discretamente como una aproximación "continua". Estas se muestran a continuación:
+Como último punto, se graficaron los modelos de las funciones de densidad marginales en 2D y la de densidad conjunta en 3D con ayuda de Matplotlib. Estas se muestran a continuación:
 <p align="center">
   <img src="Gráficas_punto_4/fx.png"/>
   <br>
