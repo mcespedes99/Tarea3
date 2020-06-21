@@ -1,5 +1,5 @@
 # Respuestas Tarea 3 del curso IE0405
-Estudiante: Mauricio Céspedes Tenorio  
+Estudiante: Mauricio Céspedes Tenorio - B71986
 
 1. A partir de los datos, encontrar la mejor curva de ajuste (modelo probabilístico) para las funciones de densidad marginales de X y Y.  
 R\ Primero se leyó el archivo xy.csv con ayuda de <em>np.genfromtxt()</em>. Luego, se encuentraron las funciones de densidad marginal de X y Y al sumar todos los Y para cada valor de X y al sumar los X para cada Y respectivamente de los datos dados en el CSV. Al graficar estos valores, se observó una tendencia Gaussiana en ambas variables aleatorias, por lo que se creó una función Gaussiana que recibe como parámetros la variable aleatoria, la media (mu) y desviación estándar (sigma). Con ayuda del comando de SpiPy <em>curve_fit()</em>, se obtuvieron los parámetros <em>mu</em> y <em>sigma</em> de mejor ajuste para ambas PDF marginales. Las funciones fueron graficadas con ayuda de Matplotlib y se notó que no modelaban perfectamente los datos, pero esto es esperable al tener ruido. Las imágenes obtenidas se muestran a continuación:  
