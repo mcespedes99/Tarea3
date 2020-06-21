@@ -21,16 +21,6 @@ R\ Al asumir independencia, se tiene que la función de densidad conjunta de X y
   <br>
   Figura 3. Vista completa de la función de densidad conjunta modelada.
 </p>  
-<p align="center">
-  <img src="Gráficas_punto_2/curva_ajuste_XY_b.png"/>
-  <br>
-  Figura 4. Vista lateral 1 de la función de densidad conjunta modelada.
-</p>  
-<p align="center">
-  <img src="Gráficas_punto_2/curva_ajuste_XY_c.png"/>
-  <br>
-  Figura 5. Vista lateral 2 de la función de densidad conjunta modelada.
-</p>  
 
 3. Hallar los valores de correlación, covarianza y coeficiente de correlación (Pearson) para los datos y explicar su significado.  
 
@@ -45,25 +35,25 @@ Como último punto, se graficaron las funciones de densidad marginales en 2D y l
 <p align="center">
   <img src="Gráficas_punto_4/fx.png"/>
   <br>
-  Figura 6. Función de densidad marginal de X.
+  Figura 4. Función de densidad marginal de X.
 </p>  
 <p align="center">
   <img src="Gráficas_punto_4/fy.png"/>
   <br>
-  Figura 7. Función de densidad marginal de Y.
+  Figura 5. Función de densidad marginal de Y.
 </p>  
 <p align="center">
-  <img src="Gráficas_punto_4/fXY_a.png"/>
+  <img src="Gráficas_punto_4/curva_ajuste_XY_a.png"/>
   <br>
-  Figura 8. Vista completa de la función de densidad conjunta.
+  Figura 6. Vista completa de la función de densidad conjunta modelada.
 </p>  
 <p align="center">
-  <img src="Gráficas_punto_4/fXY_b.png"/>
+  <img src="Gráficas_punto_4/curva_ajuste_XY_b.png"/>
   <br>
-  Figura 9. Vista lateral 1 de la función de densidad conjunta.
+  Figura 7. Vista lateral 1 de la función de densidad conjunta modelada.
 </p>  
 <p align="center">
-  <img src="Gráficas_punto_4/fXY_c.png"/>
+  <img src="Gráficas_punto_4/curva_ajuste_XY_c.png"/>
   <br>
-  Figura 10. Vista lateral 2 de la función de densidad conjunta.
+  Figura 8. Vista lateral 2 de la función de densidad conjunta modelada.
 </p>  

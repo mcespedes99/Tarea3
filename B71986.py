@@ -100,29 +100,21 @@ print("\niii) El coeficiente de correlación tiene un valor de: "+"{:.3f}".forma
 
 """4. Graficar las funciones de densidad marginales (2D), la función de densidad conjunta (3D)."""
 print("\n\nPunto 4. Se graficaron las funciones de densidad marginales de X y Y, y la PDF conjunta.\nSe evidenció una similitud entra esta última y la PDF conjunta encontrada en el punto 2.")
-#Se ploteó la función de densidad marginal de X de la misma forma que se había realizado en el Punto 1:
-plt.plot(range(5,16),fX, 'b--')
+#Se ploteó el modelo de la función de densidad marginal de X de la misma forma que se había realizado en el Punto 1:
+plt.plot(x_fit, Gaussiana(x_fit, param_x[0], param_x[1]), 'r-')
 plt.xlabel('X')
 plt.ylabel('fx(x)')
 plt.show()
-
-#Se ploteó la función de densidad marginal de Y de la misma forma que se había realizado en el Punto 1:
-plt.plot(range(5,26),fY, 'b--')
+#Se ploteó el modelo de la función de densidad marginal de Y de la misma forma que se había realizado en el Punto 1:
+plt.plot(y_fit, Gaussiana(y_fit, param_y[0], param_y[1]), 'r-')
 plt.xlabel('Y')
 plt.ylabel('fy(y)')
 plt.show()
 
-#Se crearon arrays de X y Y con todos los valores dados en cada combinación del archivo xyp.csv para que fueran arrays del mismo tamaño y poder graficarlos de forma adecuacuada.
-#Para esto, se eliminan las columnas que no correspondan a los valores de X, Y o P.
-xdata=np.delete(array_xyp, [1,2], 1)
-ydata=np.delete(array_xyp, [0,2], 1)
-pdata=np.delete(array_xyp, [0,1], 1)
-
-#Se utilizan los siguientes comandos para definir la gráfica en 3D, la cual se asemeja a la encontrada en el Punto 2.
-ax = plt.axes(projection='3d')
-ax.plot_wireframe(xdata, ydata, pdata, color='green', label='f_XY(x,y)')
-ax.scatter3D(xdata, ydata, pdata)
-plt.legend()
+#Se ploteó nuevamente el modelo de la función de densidad conjunta en 3D:
+ax = plt.axes(projection="3d")
+ax.plot_wireframe(X, Y, fxy_fit, color='green',label='f_XY(x,y)')
 ax.set_xlabel('X')
 ax.set_ylabel('Y')
+plt.legend()
 plt.show()
