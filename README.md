@@ -14,6 +14,7 @@ R\ Primero se leyó el archivo xy.csv con ayuda de <em>np.genfromtxt()</em>. Lue
   Figura 2. Curva de mejor ajuste obtenida para la función de densidad marginal de Y.
 </p>  
 2. Asumir independencia de X y Y, ¿cuál es entonces la función de densidad conjunta que modela los datos?  
+
 R\ Al asumir independencia, se tiene que la función de densidad conjunta de X y Y está dada por la multiplicación de las funciones densidad marginales de X y Y. A partir de esto, se creó una función en Python que recibe como parámetros las <em>x</em> y <em>y</em> y devuelve la multiplicación de la función Gaussiana de cada una de ellas con la media y desviación estándar obtenidas en el punto 1 para cada una de las variables aleatorias. Se graficó una PDF conjunta de mejor ajuste en 3D para compararla con la discreta que se obtiene en el punto 4.  
 <p align="center">
   <img src="Gráficas_punto_2/curva_ajuste_XY_a.png"/>
@@ -29,4 +30,40 @@ R\ Al asumir independencia, se tiene que la función de densidad conjunta de X y
   <img src="Gráficas_punto_2/curva_ajuste_XY_c.png"/>
   <br>
   Figura 5. Vista lateral 2 de la función de densidad conjunta modelada.
+</p>  
+
+3. Hallar los valores de correlación, covarianza y coeficiente de correlación (Pearson) para los datos y explicar su significado.  
+
+R\ Para este punto, primero se guardó en un array los datos datos en el archivo xyp.csv mediante el comando <em>np.genfromtxt()</em>. Luego, se calculó la covarianza y la correlación mediante un <em>for</em>.  
+-Para la correlación se obtuvo un valor de 149.543, que es muy similar al encontrado mediante la multiplicación de E[X] y E[Y] (obtenidos con los <em>mu</em> del punto 1), con lo que se concluyó que las variables aleatorias X y Y no están correlacionadas.  
+-Para la covarianza, se encontró un valor de 0.067, que es aproximadamente cero. Por ende, se puede concluir que X y Y no están correlacionadas (corroborando lo encontrado con la correlación) y que son independientes.  
+-El coeficiente de correlación, se calculó como la covarianza entre la multiplicación de las desviaciones estándar encontradas para X y Y en el punto 1. Como la covarianza ya era muy cercana a cero, se esperaba que este coeficiente también lo fuera, y esto fue lo obtenido, con un valor de 0.003. Esto reafirma lo encontrado con la covarianza.  
+
+4. Graficar las funciones de densidad marginales (2D), la función de densidad conjunta (3D).  
+
+Como último punto, se graficaron las funciones de densidad marginales en 2D y la de densidad conjunta en 3D con ayuda de Matplotlib. Para el caso de la 3D, se graficó tanto discretamente como una aproximación "continua". Estas se muestran a continuación:
+<p align="center">
+  <img src="Gráficas_punto_4/fx.png"/>
+  <br>
+  Figura 6. Función de densidad marginal de X.
+</p>  
+<p align="center">
+  <img src="Gráficas_punto_4/fy.png"/>
+  <br>
+  Figura 7. Función de densidad marginal de Y.
+</p>  
+<p align="center">
+  <img src="Gráficas_punto_4/fXY_a.png"/>
+  <br>
+  Figura 8. Vista completa de la función de densidad conjunta.
+</p>  
+<p align="center">
+  <img src="Gráficas_punto_4/fXY_b.png"/>
+  <br>
+  Figura 9. Vista lateral 1 de la función de densidad conjunta.
+</p>  
+<p align="center">
+  <img src="Gráficas_punto_4/fXY_c.png"/>
+  <br>
+  Figura 10. Vista lateral 2 de la función de densidad conjunta.
 </p>  
