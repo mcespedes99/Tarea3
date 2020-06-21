@@ -50,3 +50,33 @@ def fxy(x,y):
     return Gaussiana(x, param_x[0],param_x[1])*Gaussiana(y, param_y[0],param_y[1])
 
 """3.Hallar los valores de correlación, covarianza y coeficiente de correlación (Pearson) para los datos y explicar su significado."""
+#Lectura del archivo xyp.csv:
+array_xyp = np.genfromtxt('xyp.csv', delimiter=',', skip_header=1)
+#Cálculo de correlación:
+correlacion = 0
+for fila in array_xyp:
+    correlacion += fila[0]*fila[1]*fila[2]
+#Se evalúa si la correlación es igual a E[X]*E[Y]. Si es cierto, se dice que X y Y no están correlacionadas.
+if 0.95<=correlacion/(param_x[0]*param_y[0])<=1.05:
+    print("La correlación obtenida tiene un valor de: "+"{:.3f}".format(correlacion)+" y E[X]*E[Y] es igual a: " +"{:.3f}".format(param_x[0]*param_y[0])+".\nComo son muy similares, se concluye que X y Y no están correlacionadas.")
+else:
+    print("El valor de la correlación no es cercano a la multiplicación E[X]*E[Y], por lo que no se puede afirmar que las variables X y Y no están correlacionadas.")
+
+#Cálculo de covarianza:
+covarianza = 0
+#Se calcula recorriendo el array dado en xyp.csv, considerando que se calcula como la sumatoria de todos los x y y en la fórmula: (x-E[X])(x-E[Y])*fxy(x,y)
+for fila in array_xyp:
+    covarianza += (fila[0]-param_x[0])*(fila[1]-param_y[0])*fila[2]
+#Se evalúa si la correlación es igual a E[X]*E[Y]. Si es cierto, se dice que X y Y no están correlacionadas.
+if covarianza<=0.3:
+    print("La covarianza obtenida tiene un valor de: "+"{:.3f}".format(covarianza)+", que es muy cercano a cero, por lo que se puede concluir que X y Y son independientes y no están correlacionadas.\nEsto corrobora la suposición inicial de independencia y lo encontrado en el punto anterior (la no correlación).")
+else:
+    print("El valor de la correlación no es cercano a cero, por lo que no se puede afirmar que las variables X y Y no están correlacionadas o sean independientes.")
+
+#Cálculo del coeficiente de correlación de X y Y:
+#Este coeficiente está definido por: ρ= C_{XY}/(sigma_X * sigma_Y), donde C_{XY} es la covarianza ya encontrada y ambos sigmas son las desviaciones estándar ya encontradas con la función Gaussiana.
+#Como la covarianza es aproximadamente cero, este coeficiente también debe serlo.
+coeficiente = covarianza/(param_x[1]*param_y[1])
+print("El coeficiente de correlación tiene un valor de: "+"{:.3f}".format(coeficiente)+", que es aproximadamente cero, ya que la covarianza es muy cercana a cero.\nEste resultado arroja las mismas conclusiones que los de la covarianza: X y Y son independientes y no correlacionadas.")
+
+"""4. Graficar las funciones de densidad marginales (2D), la función de densidad conjunta (3D)."""
