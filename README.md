@@ -9,6 +9,7 @@ R\ Primero se leyó el archivo xy.csv con ayuda de <em>np.genfromtxt()</em>. Lue
 </p>  
 <p align="center">
   <img src="Gráficas_punto_1/curva_ajuste_Y.png"/>  
+  <br>
   Figura 2. Curva de mejor ajuste obtenida para la función de densidad marginal de Y.
 </p>  
 2. Asumir independencia de X y Y, ¿cuál es entonces la función de densidad conjunta que modela los datos?  
