@@ -20,7 +20,7 @@ array_csv = np.genfromtxt('xy.csv', delimiter=',')
 array_xy = np.delete(np.delete(array_csv, 0, 0), 0, 1)
 
 """1. A partir de los datos, encontrar la mejor curva de ajuste (modelo probabilístico) para las funciones de densidad marginales de X y Y."""
-print("\n\nPunto 1. Se encontraron las curvas de mejor ajuste para ambas funciones marginales (de X y Y) y se graficaron.")
+print("\n\nPunto 1. Se encontraron las curvas de mejor ajuste para ambas funciones marginales (de X y Y) al observar un comportamiento Gaussiano en los datos.")
 #Se encuentra la función marginal de X al sumar todos los Y para cada valor de X (se suman todos los valores para cada fila):
 fX= np.sum(array_xy, axis=1)
 #Se encuentra la función marginal de Y al sumar todos los X para cada valor de Y (se suman todos los valores para cada columna):
@@ -32,6 +32,8 @@ def Gaussiana(x, mu, sigma):#Donde mu es la media y sigma la desviación estánd
 #Se encuentra la curva de mejor ajuste Gaussiana para X:
 xs = np.linspace(5,15, num=11) #Se limitan las muestras de X a valores discretos entre 5 y 15, como se dio en el CSV
 param_x, _ = curve_fit(Gaussiana, xs, fX)
+#Se imprimen los parámetros mu y sigma para X:
+print("La PDF de mejor ajuste para la función de densidad marginal de X es una Gaussiana con media de: "+"{:.4f}".format(param_x[0])+"\n y una desviación estándar de: "+"{:.4f}".format(param_x[1]))
 #Se crea espacio lineal entre 5 y 15 con 30 puntos para graficar la curva de mejor ajuste obtenida:
 x_fit = np.linspace(5,15,30)
 plt.plot(x_fit, Gaussiana(x_fit, param_x[0], param_x[1]), 'r-', label="Modelo encontrado con ayuda de Scipy para fX")
@@ -44,6 +46,8 @@ plt.show()
 #Se encuentra la curva de mejor ajuste Gaussiana para Y:
 ys = np.linspace(5,25, num=21) #Se limitan las muestras de Y a valores discretos entre 5 y 25, como se dio en el CSV
 param_y, _ = curve_fit(Gaussiana, ys, fY)
+#Se imprimen los parámetros mu y sigma para Y:
+print("La PDF de mejor ajuste para la función de densidad marginal de Y también es una Gaussiana con media de: "+"{:.4f}".format(param_y[0])+"\n y una desviación estándar de: "+"{:.4f}".format(param_y[1]))
 #Se crea espacio lineal entre 5 y 25 con 40 puntos para graficar la curva de mejor ajuste obtenida:
 y_fit = np.linspace(5,25,40)
 plt.plot(y_fit, Gaussiana(y_fit, param_y[0], param_y[1]), 'r-', label="Modelo encontrado con ayuda de Scipy para fY")
