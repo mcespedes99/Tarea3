@@ -17,7 +17,7 @@ R\ Primero se leyó el archivo xy.csv con ayuda de <em>np.genfromtxt()</em>. Lue
 
 R\ Al asumir independencia, se tiene que la función de densidad conjunta de X y Y está dada por la multiplicación de las funciones densidad marginales de X y Y. A partir de esto, se creó una función en Python que recibe como parámetros las <em>x</em> y <em>y</em> y devuelve la multiplicación de la función Gaussiana de cada una de ellas con la media y desviación estándar obtenidas en el punto 1 para cada una de las variables aleatorias. Se graficó una PDF conjunta de mejor ajuste en 3D para compararla con la discreta que se obtiene en el punto 4.  
 <p align="center">
-  <img src="https://render.githubusercontent.com/render/math?math=f_{XY}(xy)=f_X(x)*f_Y(y)=\left(\frac{1}{\sqrt{2%20\pi%20a}}%20exp{[\frac{-(x-b)^2}{2a}]}\right)*\left(\frac{1}{\sqrt{2%20\pi%20a}}%20exp{[\frac{-(x-b)^2}{2a}]}\right)">  
+  <img src="https://render.githubusercontent.com/render/math?math=f_{XY}(xy)=f_X(x)*f_Y(y)=\left(\frac{1}{\sqrt{2%20\pi%20a}}%20exp{\left[\frac{-(x-b)^2}{2a}\right]}\right)*\left(\frac{1}{\sqrt{2%20\pi%20a}}%20exp{\left[\frac{-(x-b)^2}{2a}\right]}\right)">  
 </p>  
 <p align="center">
   <img src="Gráficas_punto_2/curva_ajuste_XY_a.png"/>
