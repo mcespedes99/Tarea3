@@ -27,7 +27,7 @@ Las funciones fueron graficadas con ayuda de Matplotlib y se notó que no modela
 
 R\ Al asumir independencia, se tiene que la función de densidad conjunta de X y Y está dada por la multiplicación de las funciones densidad marginales de X y Y. A partir de esto, se creó una función en Python que recibe como parámetros las <em>x</em> y <em>y</em> y devuelve la multiplicación de la función Gaussiana de cada una de ellas con la media y desviación estándar obtenidas en el punto 1 para cada una de las variables aleatorias. Además, tomando en cuenta las funciones presentadas en el punto 1, se tiene que la aproximación escrita de esta función conjunta es:    
 <p align="center">
-  <img src="https://render.githubusercontent.com/render/math?math=f_{XY}(xy)=f_X(x)*f_Y(y)=\left(\frac{1}{\sqrt{2%20\pi%20a}}%20exp{\left[\frac{-(x-b)^2}{2a}\right]}\right)*\left(\frac{1}{\sqrt{2%20\pi%20a}}%20exp{\left[\frac{-(x-b)^2}{2a}\right]}\right)">  
+  <img src="https://render.githubusercontent.com/render/math?math=f_{XY}(xy)=f_X(x)*f_Y(y)=\left(\frac{1}{\sqrt{2%20\pi\cdot10.8860}}%20exp{\left[\frac{-(x-9.9048)^2}{2\cdot10.8860}\right]}\right)*\left(\frac{1}{\sqrt{2%20\pi\cdot36.3235}}%20exp{\left[\frac{-(x-15.0795)^2}{2\cdot36.3235}\right]}\right)">  
 </p>  
 
 Por último, se graficó dicha PDF conjunta de mejor ajuste en 3D para evidenciar que sí para evidenciar que tiene una forma esperable de multiplicar dos PDF normales para variables aleatorias distintas.  
